@@ -1,0 +1,21 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    height:100%;
+    width:100%;
+}
+
+.imgPlane {
+    width:100%;
+}
+
+.title {
+  position: absolute;
+  left:20px;
+  top:20px;
+  font-family: Impact, Charcoal, sans-serif;
+  color:orange;
+}
