@@ -16,7 +16,7 @@ def index():
     while stat==1:
         postId = randint(1,100)
         caller = 'Post '+str(postId)
-        if(data[caller]['URL'][-4:]=='.gif'):
+        if(data[caller]['URL'][-4:]=='.jpg'):
             title = data[caller]['Title']
             url = data[caller]['URL']
             stat = 0

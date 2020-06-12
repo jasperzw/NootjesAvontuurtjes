@@ -4,7 +4,6 @@ html, body {
 }
 
 .wrapper {
-    height:100%;
     width:100%;
 }
 
@@ -18,4 +17,8 @@ html, body {
   top:20px;
   font-family: Impact, Charcoal, sans-serif;
   color:orange;
+}
+
+.map {
+  border: 1px solid black
 }
