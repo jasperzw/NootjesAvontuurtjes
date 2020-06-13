@@ -3,14 +3,37 @@
 <head>
 <title>Nootjes avontuurtjes</title>
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
 </head>
+
 <body>
 <div class="wrapper">
   <h1 class='title'>"{{title}}"</h1>
   <img src="{{url}}" class="imgPlane">
 </div>
 <div>
-  <iframe class="map" width="100%" height="500px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=12.309472560882568%2C45.43012695803626%2C12.331573963165285%2C45.44348229750384&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+  <div id="mapid" class="map"></div>
 </div>
+
+<script>
+
+	var mymap = L.map('mapid').setView([{{lat}}, {{lon}}], 5);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+  var marker = L.marker([{{lat}}, {{lon}}]).addTo(mymap);
+
+</script>
+
 </body>
 </html>
+<!-- https://www.openstreetmap.org/export/embed.html?bbox={{bbox0}}%2C{{bbox1}}%2C{{bbox2}}%2C{{bbox3}}&amp;layer=mapnik&amp;marker={{lat}}%2C{{long}} https://nominatim.org/release-docs/develop/api/Search/-->
