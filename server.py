@@ -1,12 +1,9 @@
 from flask import Flask, render_template
 import json
 from random import randint
-title = "hallo noa"
-url = "test.jpg"
 
-with open('travel.json') as json_file:
+with open('totalAsiaMergeSortedGeolocated.json') as json_file:
     data = json.load(json_file)
-
 
 
 app = Flask(__name__)
@@ -14,7 +11,7 @@ app = Flask(__name__)
 def index():
     stat = 1
     while stat==1:
-        postId = randint(1,20)
+        postId = randint(1,len(data))
         caller = 'Post '+str(postId)
         if(data[caller]['URL'][-4:]=='.jpg'):
             title = data[caller]['Title']
