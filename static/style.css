@@ -9,8 +9,15 @@ html, body {
 }
 
 .imgPlane {
-    width:70%;
-    height:100%;
+  display:block;
+  height:100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imgWrapper{
+  width:70%;
+  height:100%;
 }
 
 .title {
@@ -27,5 +34,16 @@ html, body {
   right:0px;
   top:0px;
   height:100%;
-  width:30%;
+  width:30% !important;
+}
+
+.mapSmall {
+  border: 1px solid black;
+  width:100% !important;
+  height:500px;
+}
+
+.imgWrapperSmall{
+  width:100%;
+  height:100%;
 }
