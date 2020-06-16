@@ -4,7 +4,7 @@ from flask import Flask, render_template
 import json
 from random import randint
 
-with open('totalAsiaMergeSortedGeolocated.json') as json_file:
+with open('totalAsiaGeolocatedSorted.json') as json_file:
     data = json.load(json_file)
 
 
